@@ -1,40 +1,330 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#242625"><meta name="description" content="UMBRA. An independent digital exhibition. Walk between four remarkable works from The Metropolitan Museum of Art's open collection.">
-  <title>UMBRA | The space between seeing</title>
-  <link rel="preload" href="assets/fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/Italiana.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/images/cypresses-1600.webp" as="image">
-  <link rel="stylesheet" href="styles.css"><script src="app.js" type="module"></script>
-</head>
-<body>
-  <a class="skip" href="#collection">Skip the gallery journey</a>
-  <header class="site-header"><a class="brand" href="#top" aria-label="Umbra, home">UMBRA<span>®</span></a><span class="header-description">A DIGITAL EXHIBITION<br>THE SPACE BETWEEN SEEING</span><a class="collection-link" href="#collection">the collection <span aria-hidden="true">↗</span></a></header>
-  <main>
-    <section class="gallery-journey" id="top" aria-label="Walk through the exhibition"><div class="gallery-viewport">
-      <div class="ceiling-light" aria-hidden="true"></div><div class="gallery-floor" aria-hidden="true"></div><div class="wall-horizon" aria-hidden="true"></div>
-      <div class="room-sign"><span>EXHIBITION 001</span><p>A world<br>worth a<br><em>closer look.</em></p></div>
-      <div class="hall-perspective"><div class="hall-world">
-        <div class="portal" aria-hidden="true"><i>ROOM 01 / 02</i></div><div class="portal" aria-hidden="true"><i>ROOM 02 / 03</i></div><div class="portal" aria-hidden="true"><i>ROOM 03 / 04</i></div><div class="portal portal-end" aria-hidden="true"><i>THE OTHER SIDE OF SEEING</i></div>
-        <button class="art-frame" type="button" data-open="0" aria-label="View Wheat Field with Cypresses by Vincent van Gogh"><span class="frame-edge"></span><img src="assets/images/cypresses-1600.webp" srcset="assets/images/cypresses-640.webp 640w, assets/images/cypresses-1600.webp 1600w" sizes="(max-width:650px) 85vw, 55vw" width="1600" height="1274" alt="Van Gogh's swirling blue sky and golden wheat field, with dark cypresses rising on the right" fetchpriority="high"><span class="frame-label">VINCENT VAN GOGH / 1889</span><span class="frame-invite">look closer ↗</span></button>
-        <button class="art-frame" type="button" data-open="1" tabindex="-1" aria-label="View The Great Wave by Katsushika Hokusai"><span class="frame-edge"></span><img src="assets/images/wave-640.webp" data-src="assets/images/wave-1600.webp" data-srcset="assets/images/wave-640.webp 640w, assets/images/wave-1600.webp 1600w" sizes="(max-width:650px) 85vw, 55vw" width="1600" height="1076" alt="Hokusai's immense indigo wave curling above small boats, with Mount Fuji on the horizon" decoding="async"><span class="frame-label">KATSUSHIKA HOKUSAI / C. 1830 TO 1832</span><span class="frame-invite">look closer ↗</span></button>
-        <button class="art-frame" type="button" data-open="2" tabindex="-1" aria-label="View Still Life with Apples and a Pot of Primroses by Paul Cézanne"><span class="frame-edge"></span><img src="assets/images/primroses-640.webp" data-src="assets/images/primroses-1600.webp" data-srcset="assets/images/primroses-640.webp 640w, assets/images/primroses-1600.webp 1600w" sizes="(max-width:650px) 85vw, 55vw" width="1600" height="1270" alt="Cézanne's red apples and green primroses arranged on a table" decoding="async"><span class="frame-label">PAUL CÉZANNE / C. 1890</span><span class="frame-invite">look closer ↗</span></button>
-        <button class="art-frame" type="button" data-open="3" tabindex="-1" aria-label="View Venice, from the Porch of Madonna della Salute by J. M. W. Turner"><span class="frame-edge"></span><img src="assets/images/venice-640.webp" data-src="assets/images/venice-1600.webp" data-srcset="assets/images/venice-640.webp 640w, assets/images/venice-1600.webp 1600w" sizes="(max-width:650px) 85vw, 55vw" width="1600" height="1193" alt="Turner's luminous view of Venetian architecture and boats on the lagoon" decoding="async"><span class="frame-label">J. M. W. TURNER / C. 1835</span><span class="frame-invite">look closer ↗</span></button>
-      </div></div>
-      <div class="art-caption" aria-live="polite"><span class="caption-index" id="caption-index">01 / 04</span><p id="caption-artist">Vincent van Gogh</p><h1 id="caption-title">Wheat Field<br>with Cypresses</h1><span class="caption-medium" id="caption-medium">1889 / OIL ON CANVAS</span></div>
-      <div class="gallery-instruction"><p>Give it a little time.<br>There is more to see.</p><button class="view-work" data-current-open type="button">view the work <span aria-hidden="true">↗</span></button></div>
-      <nav class="gallery-rail" aria-label="Choose a gallery room"><span class="rail-label">SCROLL TO WALK</span><div class="room-stops"><button type="button" data-stop="0" aria-pressed="true" aria-label="Go to room one, Vincent van Gogh"><span>01</span><i></i></button><button type="button" data-stop="1" aria-pressed="false" aria-label="Go to room two, Katsushika Hokusai"><span>02</span><i></i></button><button type="button" data-stop="2" aria-pressed="false" aria-label="Go to room three, Paul Cézanne"><span>03</span><i></i></button><button type="button" data-stop="3" aria-pressed="false" aria-label="Go to room four, J. M. W. Turner"><span>04</span><i></i></button></div><span class="rail-label">SELECT TO STAY AWHILE</span></nav>
-    </div></section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#242625" />
+    <meta
+      name="description"
+      content="UMBRA. An independent digital exhibition. Walk between four remarkable works from The Metropolitan Museum of Art's open collection."
+    />
+    <title>UMBRA | The space between seeing</title>
+    <link
+      rel="preload"
+      href="assets/fonts/Manrope.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/Italiana.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="assets/images/cypresses-1600.webp" as="image" />
+    <link
+      rel="stylesheet"
+      href="styles.css?v=b0a2afb9d91319afb93cea8120a2ee92ad365339d47e67145bc9f71da4ee6186"
+    />
+    <script
+      src="app.js?v=568b0ac061a7f8843584690f29ec968210b9065e08105d5cd95d2471000db47d"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <a class="skip" href="#collection">Skip the gallery journey</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Umbra, home"
+        >UMBRA<span>®</span></a
+      ><span class="header-description"
+        >A DIGITAL EXHIBITION<br />THE SPACE BETWEEN SEEING</span
+      ><a class="collection-link" href="#collection"
+        >the collection <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main>
+      <section
+        class="gallery-journey"
+        id="top"
+        aria-label="Walk through the exhibition"
+      >
+        <div class="gallery-viewport">
+          <div class="ceiling-light" aria-hidden="true"></div>
+          <div class="gallery-floor" aria-hidden="true"></div>
+          <div class="wall-horizon" aria-hidden="true"></div>
+          <div class="room-sign">
+            <span>EXHIBITION 001</span>
+            <p>A world<br />worth a<br /><em>closer look.</em></p>
+          </div>
+          <div class="hall-perspective">
+            <div class="hall-world">
+              <div class="portal" aria-hidden="true"><i>ROOM 01 / 02</i></div>
+              <div class="portal" aria-hidden="true"><i>ROOM 02 / 03</i></div>
+              <div class="portal" aria-hidden="true"><i>ROOM 03 / 04</i></div>
+              <div class="portal portal-end" aria-hidden="true">
+                <i>THE OTHER SIDE OF SEEING</i>
+              </div>
+              <button
+                class="art-frame"
+                type="button"
+                data-open="0"
+                aria-label="View Wheat Field with Cypresses by Vincent van Gogh"
+              >
+                <span class="frame-edge"></span
+                ><img
+                  src="assets/images/cypresses-1600.webp"
+                  srcset="
+                    assets/images/cypresses-640.webp   640w,
+                    assets/images/cypresses-1600.webp 1600w
+                  "
+                  sizes="(max-width:650px) 85vw, 55vw"
+                  width="1600"
+                  height="1274"
+                  alt="Van Gogh's swirling blue sky and golden wheat field, with dark cypresses rising on the right"
+                  fetchpriority="high"
+                /><span class="frame-label">VINCENT VAN GOGH / 1889</span
+                ><span class="frame-invite">look closer ↗</span>
+              </button>
+              <button
+                class="art-frame"
+                type="button"
+                data-open="1"
+                tabindex="-1"
+                aria-label="View The Great Wave by Katsushika Hokusai"
+              >
+                <span class="frame-edge"></span
+                ><img
+                  src="assets/images/wave-640.webp"
+                  data-src="assets/images/wave-1600.webp"
+                  data-srcset="assets/images/wave-640.webp 640w, assets/images/wave-1600.webp 1600w"
+                  sizes="(max-width:650px) 85vw, 55vw"
+                  width="1600"
+                  height="1076"
+                  alt="Hokusai's immense indigo wave curling above small boats, with Mount Fuji on the horizon"
+                  decoding="async"
+                /><span class="frame-label"
+                  >KATSUSHIKA HOKUSAI / C. 1830 TO 1832</span
+                ><span class="frame-invite">look closer ↗</span>
+              </button>
+              <button
+                class="art-frame"
+                type="button"
+                data-open="2"
+                tabindex="-1"
+                aria-label="View Still Life with Apples and a Pot of Primroses by Paul Cézanne"
+              >
+                <span class="frame-edge"></span
+                ><img
+                  src="assets/images/primroses-640.webp"
+                  data-src="assets/images/primroses-1600.webp"
+                  data-srcset="assets/images/primroses-640.webp 640w, assets/images/primroses-1600.webp 1600w"
+                  sizes="(max-width:650px) 85vw, 55vw"
+                  width="1600"
+                  height="1270"
+                  alt="Cézanne's red apples and green primroses arranged on a table"
+                  decoding="async"
+                /><span class="frame-label">PAUL CÉZANNE / C. 1890</span
+                ><span class="frame-invite">look closer ↗</span>
+              </button>
+              <button
+                class="art-frame"
+                type="button"
+                data-open="3"
+                tabindex="-1"
+                aria-label="View Venice, from the Porch of Madonna della Salute by J. M. W. Turner"
+              >
+                <span class="frame-edge"></span
+                ><img
+                  src="assets/images/venice-640.webp"
+                  data-src="assets/images/venice-1600.webp"
+                  data-srcset="assets/images/venice-640.webp 640w, assets/images/venice-1600.webp 1600w"
+                  sizes="(max-width:650px) 85vw, 55vw"
+                  width="1600"
+                  height="1193"
+                  alt="Turner's luminous view of Venetian architecture and boats on the lagoon"
+                  decoding="async"
+                /><span class="frame-label">J. M. W. TURNER / C. 1835</span
+                ><span class="frame-invite">look closer ↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="art-caption" aria-live="polite">
+            <span class="caption-index" id="caption-index">01 / 04</span>
+            <p id="caption-artist">Vincent van Gogh</p>
+            <h1 id="caption-title">Wheat Field<br />with Cypresses</h1>
+            <span class="caption-medium" id="caption-medium"
+              >1889 / OIL ON CANVAS</span
+            >
+          </div>
+          <div class="gallery-instruction">
+            <p>Give it a little time.<br />There is more to see.</p>
+            <button class="view-work" data-current-open type="button">
+              view the work <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <nav class="gallery-rail" aria-label="Choose a gallery room">
+            <span class="rail-label">SCROLL TO WALK</span>
+            <div class="room-stops">
+              <button
+                type="button"
+                data-stop="0"
+                aria-pressed="true"
+                aria-label="Go to room one, Vincent van Gogh"
+              >
+                <span>01</span><i></i></button
+              ><button
+                type="button"
+                data-stop="1"
+                aria-pressed="false"
+                aria-label="Go to room two, Katsushika Hokusai"
+              >
+                <span>02</span><i></i></button
+              ><button
+                type="button"
+                data-stop="2"
+                aria-pressed="false"
+                aria-label="Go to room three, Paul Cézanne"
+              >
+                <span>03</span><i></i></button
+              ><button
+                type="button"
+                data-stop="3"
+                aria-pressed="false"
+                aria-label="Go to room four, J. M. W. Turner"
+              >
+                <span>04</span><i></i>
+              </button>
+            </div>
+            <span class="rail-label">SELECT TO STAY AWHILE</span>
+          </nav>
+        </div>
+      </section>
 
-    <section class="collection" id="collection" aria-labelledby="collection-title"><div class="collection-header"><span>FOUR WORKS. FOUR WAYS OF LOOKING.</span><h2 id="collection-title">A closer<br><em>kind of seeing.</em></h2><p>Not a scroll of passing images.<br>A small collection to spend time with.</p></div><div class="collection-list">
-      <button class="collection-row" type="button" data-open="0"><span class="row-number">01</span><img src="assets/images/cypresses-640.webp" width="640" height="509" alt="Wheat Field with Cypresses detail" loading="lazy"><span class="row-title">Wheat Field with Cypresses<small>Vincent van Gogh / 1889</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>
-      <button class="collection-row" type="button" data-open="1"><span class="row-number">02</span><img src="assets/images/wave-640.webp" width="640" height="430" alt="The Great Wave detail" loading="lazy"><span class="row-title">Under the Wave off Kanagawa<small>Katsushika Hokusai / c. 1830 to 1832</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>
-      <button class="collection-row" type="button" data-open="2"><span class="row-number">03</span><img src="assets/images/primroses-640.webp" width="640" height="508" alt="Still Life with Apples and a Pot of Primroses detail" loading="lazy"><span class="row-title">Still Life with Apples and a Pot of Primroses<small>Paul Cézanne / c. 1890</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>
-      <button class="collection-row" type="button" data-open="3"><span class="row-number">04</span><img src="assets/images/venice-640.webp" width="640" height="477" alt="Venice detail" loading="lazy"><span class="row-title">Venice, from the Porch of Madonna della Salute<small>J. M. W. Turner / c. 1835</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>
-    </div></section>
-  </main>
-  <footer><a class="brand" href="#top">UMBRA</a><p>An independent digital gallery concept.<br>Public-domain works from The Metropolitan Museum of Art. No affiliation implied.</p><a href="assets/LICENSES.md">collection & credits ↗</a></footer>
-  <dialog class="work-dialog" aria-labelledby="detail-title"><header class="detail-header"><span>UMBRA / A CLOSER LOOK</span><button class="detail-close" type="button" autofocus>close ×</button></header><div class="detail-layout"><div class="detail-image-wrap"><img id="detail-image" alt=""><button id="zoom-work" type="button" aria-pressed="false">see the detail +</button></div><div class="detail-information"><p class="detail-artist" id="detail-artist"></p><h2 id="detail-title"></h2><p id="detail-facts"></p><p class="detail-note" id="detail-note"></p><a id="detail-source" class="source-link" href="https://www.metmuseum.org/hubs/open-access" target="_blank" rel="noopener noreferrer">view museum record ↗</a><div class="detail-navigation"><button type="button" id="previous-work" aria-label="Previous artwork">← previous</button><span id="detail-counter">01 / 04</span><button type="button" id="next-work" aria-label="Next artwork">next →</button></div></div></div></dialog>
-</body>
+      <section
+        class="collection"
+        id="collection"
+        aria-labelledby="collection-title"
+      >
+        <div class="collection-header">
+          <span>FOUR WORKS. FOUR WAYS OF LOOKING.</span>
+          <h2 id="collection-title">A closer<br /><em>kind of seeing.</em></h2>
+          <p>
+            Not a scroll of passing images.<br />A small collection to spend
+            time with.
+          </p>
+        </div>
+        <div class="collection-list">
+          <button class="collection-row" type="button" data-open="0">
+            <span class="row-number">01</span
+            ><img
+              src="assets/images/cypresses-640.webp"
+              width="640"
+              height="509"
+              alt="Wheat Field with Cypresses detail"
+              loading="lazy"
+            /><span class="row-title"
+              >Wheat Field with Cypresses<small
+                >Vincent van Gogh / 1889</small
+              ></span
+            ><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="collection-row" type="button" data-open="1">
+            <span class="row-number">02</span
+            ><img
+              src="assets/images/wave-640.webp"
+              width="640"
+              height="430"
+              alt="The Great Wave detail"
+              loading="lazy"
+            /><span class="row-title"
+              >Under the Wave off Kanagawa<small
+                >Katsushika Hokusai / c. 1830 to 1832</small
+              ></span
+            ><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="collection-row" type="button" data-open="2">
+            <span class="row-number">03</span
+            ><img
+              src="assets/images/primroses-640.webp"
+              width="640"
+              height="508"
+              alt="Still Life with Apples and a Pot of Primroses detail"
+              loading="lazy"
+            /><span class="row-title"
+              >Still Life with Apples and a Pot of Primroses<small
+                >Paul Cézanne / c. 1890</small
+              ></span
+            ><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="collection-row" type="button" data-open="3">
+            <span class="row-number">04</span
+            ><img
+              src="assets/images/venice-640.webp"
+              width="640"
+              height="477"
+              alt="Venice detail"
+              loading="lazy"
+            /><span class="row-title"
+              >Venice, from the Porch of Madonna della Salute<small
+                >J. M. W. Turner / c. 1835</small
+              ></span
+            ><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#top">UMBRA</a>
+      <p>
+        An independent digital gallery concept.<br />Public-domain works from
+        The Metropolitan Museum of Art. No affiliation implied.
+      </p>
+      <a href="assets/LICENSES.md">collection & credits ↗</a>
+    </footer>
+    <dialog class="work-dialog" aria-labelledby="detail-title">
+      <header class="detail-header">
+        <span>UMBRA / A CLOSER LOOK</span
+        ><button class="detail-close" type="button" autofocus>close ×</button>
+      </header>
+      <div class="detail-layout">
+        <div class="detail-image-wrap">
+          <img id="detail-image" alt="" /><button
+            id="zoom-work"
+            type="button"
+            aria-pressed="false"
+          >
+            see the detail +
+          </button>
+        </div>
+        <div class="detail-information">
+          <p class="detail-artist" id="detail-artist"></p>
+          <h2 id="detail-title"></h2>
+          <p id="detail-facts"></p>
+          <p class="detail-note" id="detail-note"></p>
+          <a
+            id="detail-source"
+            class="source-link"
+            href="https://www.metmuseum.org/hubs/open-access"
+            target="_blank"
+            rel="noopener noreferrer"
+            >view museum record ↗</a
+          >
+          <div class="detail-navigation">
+            <button
+              type="button"
+              id="previous-work"
+              aria-label="Previous artwork"
+            >
+              ← previous</button
+            ><span id="detail-counter">01 / 04</span
+            ><button type="button" id="next-work" aria-label="Next artwork">
+              next →
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
 </html>

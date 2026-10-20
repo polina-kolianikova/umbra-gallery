@@ -1,0 +1,150 @@
+[
+  {
+    "objectID": 436535,
+    "title": "Wheat Field with Cypresses",
+    "artistDisplayName": "Vincent van Gogh",
+    "objectDate": "1889",
+    "medium": "Oil on canvas",
+    "dimensions": "28 13/16 \u00d7 36 3/4 in. (73.2 \u00d7 93.4 cm)",
+    "creditLine": "Purchase, The Annenberg Foundation Gift, 1993",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/436535",
+    "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-42549-001.jpg",
+    "isPublicDomain": true,
+    "slug": "cypresses",
+    "sourceDimensions": [
+      4000,
+      3184
+    ],
+    "variants": [
+      {
+        "file": "cypresses-640.webp",
+        "width": 640,
+        "height": 509,
+        "bytes": 121186
+      },
+      {
+        "file": "cypresses-1600.webp",
+        "width": 1600,
+        "height": 1274,
+        "bytes": 793116
+      },
+      {
+        "file": "cypresses-2560.webp",
+        "width": 2560,
+        "height": 2038,
+        "bytes": 2685050
+      }
+    ]
+  },
+  {
+    "objectID": 45434,
+    "title": "Under the Wave off Kanagawa (Kanagawa oki nami ura), also known as The Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku sanj\u016brokkei)",
+    "artistDisplayName": "Katsushika Hokusai",
+    "objectDate": "ca. 1830\u201332",
+    "medium": "Woodblock print; ink and color on paper",
+    "dimensions": "10 1/8 x 14 15/16 in. (25.7 x 37.9 cm)",
+    "creditLine": "H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45434",
+    "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/DP130155.jpg",
+    "isPublicDomain": true,
+    "slug": "wave",
+    "sourceDimensions": [
+      3859,
+      2594
+    ],
+    "variants": [
+      {
+        "file": "wave-640.webp",
+        "width": 640,
+        "height": 430,
+        "bytes": 95490
+      },
+      {
+        "file": "wave-1600.webp",
+        "width": 1600,
+        "height": 1076,
+        "bytes": 532754
+      },
+      {
+        "file": "wave-2560.webp",
+        "width": 2560,
+        "height": 1721,
+        "bytes": 1704202
+      }
+    ]
+  },
+  {
+    "objectID": 435882,
+    "title": "Still Life with Apples and a Pot of Primroses",
+    "artistDisplayName": "Paul C\u00e9zanne",
+    "objectDate": "ca. 1890",
+    "medium": "Oil on canvas",
+    "dimensions": "28 3/4 x 36 3/8 in. (73 x 92.4 cm)",
+    "creditLine": "Bequest of Sam A. Lewisohn, 1951",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/435882",
+    "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DT47.jpg",
+    "isPublicDomain": true,
+    "slug": "primroses",
+    "sourceDimensions": [
+      3807,
+      3021
+    ],
+    "variants": [
+      {
+        "file": "primroses-640.webp",
+        "width": 640,
+        "height": 508,
+        "bytes": 61210
+      },
+      {
+        "file": "primroses-1600.webp",
+        "width": 1600,
+        "height": 1270,
+        "bytes": 348218
+      },
+      {
+        "file": "primroses-2560.webp",
+        "width": 2560,
+        "height": 2031,
+        "bytes": 1522276
+      }
+    ]
+  },
+  {
+    "objectID": 437853,
+    "title": "Venice, from the Porch of Madonna della Salute",
+    "artistDisplayName": "Joseph Mallord William Turner",
+    "objectDate": "ca. 1835",
+    "medium": "Oil on canvas",
+    "dimensions": "36 x 48 1/8 in. (91.4 x 122.2 cm)",
+    "creditLine": "Bequest of Cornelius Vanderbilt, 1899",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/437853",
+    "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP169568.jpg",
+    "isPublicDomain": true,
+    "slug": "venice",
+    "sourceDimensions": [
+      1959,
+      1461
+    ],
+    "variants": [
+      {
+        "file": "venice-640.webp",
+        "width": 640,
+        "height": 477,
+        "bytes": 74350
+      },
+      {
+        "file": "venice-1600.webp",
+        "width": 1600,
+        "height": 1193,
+        "bytes": 410500
+      },
+      {
+        "file": "venice-2560.webp",
+        "width": 1959,
+        "height": 1461,
+        "bytes": 923522
+      }
+    ]
+  }
+]

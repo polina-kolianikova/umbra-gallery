@@ -9,3 +9,7 @@ Reduced motion replaces travel with direct room selection and keeps the catalogu
 The images are verified public-domain works from The Metropolitan Museum of Art Open Access collection. Attribution and original dimensions are recorded in `assets/LICENSES.md` and `assets/artworks.json`. No original source was enlarged. Medium images are promoted as the camera approaches; full detail is loaded only when opened.
 
 `document.documentElement.dataset` exposes `renderFrames`, `drawCalls`, `triangles`, `renderDpr` and `renderMode`. For this CSS site the frame count measures actual scroll paint updates, with draw calls and triangles zero. No updates are scheduled while idle, hidden or outside the gallery viewport.
+
+## iPhone Safari composition, October2026
+
+The mobile experience now reserves explicit photographic or live-model frames in normal document flow. It does not move the hero object into arbitrary gaps between text blocks. Header, content, forms and footer share the mobile reading grid; desktop retains its cinematic composition. Exact local static font weights avoid variable-default differences across browser engines. Relevant touch interactions, portrait/landscape transitions and live scene visibility were checked in Playwright WebKit. This is browser emulation, not a physical iPhone test.

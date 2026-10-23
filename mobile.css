@@ -1,0 +1,58 @@
+/* iPhone composition: content owns its height; visual stages never resize during browser-chrome changes. */
+@media (max-width: 700px), (max-height: 500px) and (pointer: coarse) {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+  body { overflow-wrap: break-word; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  button, select, input, textarea { touch-action: manipulation; }
+  input, select, textarea { font-size: 16px; }
+  header, .site-header { padding-top: max(18px, env(safe-area-inset-top)); }
+  footer { padding-bottom: max(28px, env(safe-area-inset-bottom)); }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  dialog { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+}
+
+@media (max-width: 700px), (max-height: 500px) and (pointer: coarse) {
+  .js-gallery .gallery-journey { height: 360svh; min-height: 0; }
+  .js-gallery .gallery-viewport { min-height: 0; height: 100svh; display: grid; grid-template-rows: minmax(0, 1fr) auto auto auto; gap: 14px; padding: 100px 6% max(20px, env(safe-area-inset-bottom)); }
+  .hall-perspective { position: relative; inset: auto; min-height: 180px; overflow: hidden; perspective: none; grid-row: 1; }
+  .hall-world { top: 50%; left: 50%; transform: none !important; transform-style: flat; }
+  .portal, .room-sign, .ceiling-light, .wall-horizon, .gallery-floor { display: none; }
+  .js-gallery .art-frame { padding: 10px; transform-style: flat; backface-visibility: visible; }
+  .frame-edge { inset: 0; border-width: 5px; }
+  .frame-label { display: none; }
+  .frame-invite { display: none; }
+  .art-caption { position: relative; inset: auto; max-width: none; grid-row: 2; }
+  .caption-index { font-size: 11px; }
+  .art-caption > p { margin: 8px 0; font-size: 14px; }
+  .art-caption h1 { max-width: none; font-size: clamp(26px, 7.3vw, 34px); line-height: 1.1; }
+  .caption-medium { display: block; font-size: 11px; line-height: 1.5; margin-top: 10px; }
+  .gallery-instruction { position: relative; inset: auto; grid-row: 3; text-align: left; }
+  .view-work { margin: 0; max-width: none; width: 100%; min-height: 44px; font-size: 15px; justify-content: space-between; padding: 8px 0; }
+  .gallery-rail { position: relative; inset: auto; grid-row: 4; display: block; }
+  .gallery-rail > .rail-label, .gallery-rail > .rail-label:last-child { display: none; }
+  .room-stops { gap: 10px; justify-content: space-between; }
+  .room-stops button { flex: 1; font-size: 13px; min-width: 44px; min-height: 44px; }
+  .room-stops i { width: 24px; }
+  .collection-header > span, .collection-header > p { font-size: 13px; line-height: 1.65; max-width: none; }
+  .collection-header h2 { font-size: 14vw; }
+  .collection-row { grid-template-columns: 62px minmax(0,1fr) 20px; gap: 16px; }
+  .collection-row .row-number { display: none; }
+  .collection-row img { width: 62px; height: 74px; }
+  .row-title { font-size: 23px; line-height: 1.15; }
+  .row-title small { font-size: 13px; }
+  footer p, footer > a:last-child { font-size: 12px; line-height: 1.6; max-width: none; }
+  .work-dialog { height: 100dvh; }
+  .detail-header { padding-top: max(14px, env(safe-area-inset-top)); }
+  .detail-information > p:not(.detail-artist) { font-size: 16px; line-height: 1.6; }
+  .detail-layout { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+  .no-motion .gallery-journey { height: auto; min-height: 0; }
+}
+@media (max-height: 500px) and (pointer: coarse) {
+  .js-gallery .gallery-journey { height: auto; }
+  .js-gallery .gallery-viewport { height: 560px; position: relative; padding-top: 94px; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr auto auto; column-gap: 30px; }
+  .hall-perspective { grid-row: 1 / 4; grid-column: 1; min-height: 250px; }
+  .art-caption { grid-row: 1; grid-column: 2; align-self: center; }
+  .art-caption h1 { font-size: 29px; }
+  .gallery-instruction { grid-row: 2; grid-column: 2; }
+  .gallery-rail { grid-row: 3; grid-column: 2; }
+}

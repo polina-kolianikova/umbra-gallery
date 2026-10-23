@@ -1,5 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+const compactLandscape = matchMedia("(max-height: 500px) and (pointer: coarse)");
 const journey = $(".gallery-journey"),
   viewport = $(".gallery-viewport"),
   world = $(".hall-world");
@@ -94,12 +95,12 @@ function loadWork(index) {
 function sizeScene() {
   width = viewport.clientWidth;
   height = viewport.clientHeight;
-  travel = Math.max(1, journey.offsetHeight - innerHeight);
-  const mobile = width <= 650;
+  travel = Math.max(1, journey.offsetHeight - viewport.clientHeight);
+  const mobile = matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse)").matches;
   frames.forEach((frame, index) => {
-    let w = Math.min(mobile ? width * 0.88 : width * 0.58, 900);
+    let w = Math.min(mobile ? $(".hall-perspective").clientWidth * 0.94 : width * 0.58, 900);
     let h = w * works[index].ratio + 24;
-    const maximum = height * (mobile ? 0.39 : 0.51);
+    const maximum = mobile ? $(".hall-perspective").clientHeight * 0.88 : height * 0.51;
     if (h > maximum) {
       w = (maximum - 24) / works[index].ratio;
       h = maximum;
@@ -145,11 +146,11 @@ function paint() {
     diagnostics("offscreen");
     return;
   }
-  const raw = reduced.matches
+  const raw = reduced.matches || compactLandscape.matches
     ? manualStop / 3
     : clamp(-journey.getBoundingClientRect().top / travel);
   const q = raw * 3;
-  const mobile = width <= 650;
+  const mobile = matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse)").matches;
   const span = mobile ? 760 : 1050;
   const i = Math.min(2, Math.floor(q)),
     fraction = q - i;
@@ -167,7 +168,8 @@ function paint() {
     const z = -index * span;
     const angle = side * (mobile ? 7 : 18);
     frame.style.transform = `translate3d(${x}px,${index % 2 ? -10 : 5}px,${z}px) rotateY(${-angle}deg)`;
-    const shown = distance > -0.42 && distance < 2.4;
+    const shown = mobile ? Math.abs(distance) < 1.1 : distance > -0.42 && distance < 2.4;
+    if (mobile) frame.style.transform = `translateX(${distance * ($(".hall-perspective").clientWidth + 20)}px)`;
     frame.style.visibility = shown ? "visible" : "hidden";
     frame.tabIndex = Math.round(q) === index && shown ? 0 : -1;
     frame.inert = !shown;
@@ -187,7 +189,7 @@ function requestPaint() {
   if (!raf && !document.hidden && visible) raf = requestAnimationFrame(paint);
 }
 function goTo(index) {
-  if (reduced.matches) {
+  if (reduced.matches || compactLandscape.matches) {
     manualStop = index;
     setActive(index);
     requestPaint();
@@ -212,6 +214,7 @@ stops.forEach((button, index) => {
     }
   });
 });
+compactLandscape.addEventListener("change", () => { manualStop = active; sizeScene(); requestPaint(); });
 document.documentElement.classList.add("js-gallery");
 document.documentElement.classList.toggle("no-motion", reduced.matches);
 window.addEventListener("scroll", requestPaint, { passive: true });
@@ -270,6 +273,16 @@ function showWork(index) {
   imageWrap.scrollLeft = 0;
   $("#zoom-work").setAttribute("aria-pressed", "false");
   $("#zoom-work").textContent = "see the detail +";
+  // A new work starts with its image, rather than retaining the previous work's scroll.
+  const shownImage = detailImage.src;
+  if (dialog.open) {
+    $("#detail-title").tabIndex = -1;
+    $("#detail-title").focus({ preventScroll: true });
+    dialog.scrollTop = 0;
+  }
+  detailImage.decode().then(() => {
+    if (dialog.open && detailImage.src === shownImage) dialog.scrollTop = 0;
+  }).catch(() => {});
 }
 function openWork(index) {
   returnFocus = document.activeElement;
@@ -327,6 +340,7 @@ $("#zoom-work").addEventListener("click", () => {
     ? "return to the whole −"
     : "see the detail +";
 });
+document.fonts.ready.then(() => { sizeScene(); requestPaint(); });
 sizeScene();
 setActive(0);
 diagnostics("idle");
